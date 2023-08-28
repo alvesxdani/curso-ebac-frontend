@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+
+    <style>
+        body,html {
+            width: 100vw;
+            background-color: #f9f9f9;
+            font: 13px 'Calibri', sans-serif;
+        }
+
+        .box {
+            width: 400px;
+            margin: 2rem auto;
+            border: 1px solid #eee;
+            background: #fff;
+            border-radius: 0.5rem;
+            padding: 1rem;
+            box-sizing: border-box;
+        }
+
+        .box h1 {
+            margin: 0 0 1rem 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .forms, .row {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .forms button {
+            cursor: pointer;
+            padding: 1rem 2rem;
+        }
+
+        .row {
+            gap: 0.2rem;
+        }
+
+        .row label {
+            font: bold 1.3rem 'Calibri', sans-serif;
+        }
+
+        .row input {
+            padding: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h1>Cadastre-se</h1>
+        <form class="forms">
+            <div class="row">
+                <label for="name">Nome</label>
+                <input type="text" name="name" id="name" placeholder="Digite o seu nome completo" />
+            </div>
+
+            <div class="row">
+                <label for="email">E-mail</label>
+                <input type="text" name="email" id="email" placeholder="john.doe@exemple.com" />
+            </div>
+
+            <div class="row">
+                <label for="password">Senha</label>
+                <input type="password" name="password" id="password" placeholder="Digite sua senha" />
+            </div>
+
+            <button type="submit">Cadastrar</button>
+        </form>
+    </div>
+    
+</body>
+</html>

@@ -1,12 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cálculo</title>
-  <link rel="stylesheet" href="./style.css">
-</head>
-<body>
-  <script src="./scripts.js" defer></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cálculo</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main>
+      <div class="container">
+        <h1>Verificando os números:</h1>
+        <form id="forms">
+          <div class="row">
+            <label for="numForA">A:</label>
+            <input type="number" name="numForA" id="numForA" />
+          </div>
+
+          <div class="row">
+            <label for="numForB">B:</label>
+            <input type="number" name="numForB" id="numForB" />
+          </div>
+          <button type="submit" id="btn-enviar">Enviar</button>
+        </form>
+        
+        <div id="msg-aviso"></div>
+
+      </div>
+    </main>
+    <script src="./scripts.js" defer></script>
+  </body>
 </html>

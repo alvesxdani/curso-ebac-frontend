@@ -12,39 +12,41 @@
 </head>
 
 <body>
-    <header>
-        <img src="./assets/logo.png" alt="capelo e diploma">
-        <h1>Calculadora de médias</h1>
-    </header>
-    <form>
-        <input type="text" name="name-atividade" id="name-atividade" required />
-        <input type="number" name="nota-atividade" id="nota-atividade" required min="0" max="10" />
-        <button type="submit">Adicionar +</button>
+    <div class="container">
+        <header>
+            <img src="./assets/logo.png" alt="capelo e diploma">
+            <h1>Calculadora de médias</h1>
+        </header>
+        <form>
+            <input type="text" name="name-atividade" id="name-atividade" required />
+            <input type="number" name="nota-atividade" id="nota-atividade" required min="0" max="10" />
+            <button type="submit">Adicionar +</button>
 
-        <table>
-            <thead>
-                <tr>
-                    <th>Nome da atividade</th>
-                    <th>Nota da atividade</th>
-                    <th>Aprovado</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Atividade 1</td>
-                    <td>7</td>
-                    <td><img src="./assets/aprovado.png" alt="emoji feliz" /></td>
-                </tr>
-            </tbody>
-            <tfoot>
-                <tr>
-                    <td>Média final</td>
-                    <td>7</td>
-                    <td>Aprovado</td>
-                </tr>
-            </tfoot>
-        </table>
-    </form>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome da atividade</th>
+                        <th>Nota da atividade</th>
+                        <th>Aprovado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Atividade 1</td>
+                        <td>7</td>
+                        <td><img src="./assets/aprovado.png" alt="emoji feliz" /></td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td>Média final</td>
+                        <td>7</td>
+                        <td>Aprovado</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </form>
+    </div>
 </body>
 
 </html>

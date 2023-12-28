@@ -1,0 +1,120 @@
+// Colors
+$main-color: #44bd32;
+$secunday-color: #182C61;
+$bg-color: #f5f6fa;
+
+// Mixins
+@mixin grid($qtdGrid, $width, $row-gap, $column-gap) {
+  display: grid;
+  grid-template-columns: repeat($qtdGrid, $qtdGrid+fr);
+  row-gap: $row-gap;
+  column-gap: $column-gap;
+  width: $width;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Roboto, sans-serif;
+}
+
+body {
+  background-color: $bg-color;
+}
+
+li {
+  list-style: none;
+}
+
+
+.container {
+  max-width: 1024px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+header {
+  background-color: $secunday-color;
+  position: sticky;
+  top: 0;
+  left: 0;
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 0;
+  }
+}
+
+.menu {
+  display: flex;
+  li {
+    font-weight: bold;
+    margin-left: 24px;
+    a {
+      color: #fff;
+      text-decoration: none;
+    }
+  }
+}
+
+section {
+  padding: 56px 0;
+}
+
+
+.products {
+  margin-top: 40px;
+  @include grid(3, 100%, 4rem, 1rem);
+}
+
+.product-item img {
+  width: 100%;
+  border-radius: 16px;
+}
+
+@mixin buttons($bg,$color, $size) {
+  display: block;
+  background-color: $bg;
+  color: $color;
+  text-align: center;
+  border-radius: 8px;
+  text-decoration: none;
+  margin-top: 8px;
+  @if $size == 'sm' {
+    padding: 0.5rem 0;
+  }
+  @if $size == 'md' {
+    padding: 1rem 0;
+  }
+}
+
+.product-button {
+  @include buttons($main-color, #fff, 'sm');
+}
+
+.product-button:hover {
+  background-color: lighten($main-color, 5%);
+}
+
+@media screen and (max-width: 1023px) {
+  .container {
+      max-width: 80%;
+  }
+
+  .products {
+      grid-template-columns: repeat(2, 48.5%);
+      column-gap: 3%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .products {
+      display: block;
+  }
+
+  .product-item  {
+      margin-bottom: 32px;
+  }
+}

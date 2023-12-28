@@ -1,0 +1,12 @@
+{
+  "name": "exercicios-ebac-frontend",
+  "version": "1.0.0",
+  "description": "A project with SASS",
+  "main": "index.html",
+  "scripts": {
+    "start": "sass --watch style/in/input.scss:style/out/output.css",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

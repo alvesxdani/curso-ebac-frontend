@@ -12,6 +12,31 @@ $bg-color: #f5f6fa;
   width: $width;
 }
 
+@mixin buttons($bg,$color, $size) {
+  display: block;
+  background-color: $bg;
+  color: $color;
+  text-align: center;
+  border-radius: 8px;
+  text-decoration: none;
+  margin-top: 8px;
+  @if $size == 'sm' {
+    padding: 0.5rem 0;
+  }
+  @if $size == 'md' {
+    padding: 1rem 0;
+  }
+}
+
+@mixin pageSize($size) {
+  @if $size == 'sm' {
+    @media screen and (max-width: 1023px) {
+      max-width: 80%;
+      @content
+    }
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -32,6 +57,7 @@ li {
   max-width: 1024px;
   width: 100%;
   margin: 0 auto;
+  @include pageSize('sm');
 }
 
 header {
@@ -67,54 +93,28 @@ section {
 .products {
   margin-top: 40px;
   @include grid(3, 100%, 4rem, 1rem);
+  @media screen and (max-width: 1023px) {
+    @include grid(2, 100%, 4rem, 1rem);
+  }
+  @media screen and (max-width: 767px) {
+    display: block;
+}
 }
 
-.product-item img {
-  width: 100%;
-  border-radius: 16px;
+.product-item {
+  img {
+    width: 100%;
+    border-radius: 16px;
+  }
+  @media screen and (max-width: 767px) {
+    margin-bottom: 32px;
+    }
 }
 
-@mixin buttons($bg,$color, $size) {
-  display: block;
-  background-color: $bg;
-  color: $color;
-  text-align: center;
-  border-radius: 8px;
-  text-decoration: none;
-  margin-top: 8px;
-  @if $size == 'sm' {
-    padding: 0.5rem 0;
-  }
-  @if $size == 'md' {
-    padding: 1rem 0;
-  }
-}
 
 .product-button {
   @include buttons($main-color, #fff, 'sm');
-}
-
-.product-button:hover {
-  background-color: lighten($main-color, 5%);
-}
-
-@media screen and (max-width: 1023px) {
-  .container {
-      max-width: 80%;
-  }
-
-  .products {
-      grid-template-columns: repeat(2, 48.5%);
-      column-gap: 3%;
-  }
-}
-
-@media screen and (max-width: 767px) {
-  .products {
-      display: block;
-  }
-
-  .product-item  {
-      margin-bottom: 32px;
+  &:hover {
+    background-color: lighten($main-color, 5%);
   }
 }

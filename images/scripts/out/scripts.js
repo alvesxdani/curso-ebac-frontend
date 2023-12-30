@@ -1,0 +1,1 @@
+const teste=()=>{console.log("teste")},teste2="Uma string";teste();

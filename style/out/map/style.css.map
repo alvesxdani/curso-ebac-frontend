@@ -1,0 +1,1 @@
+{"version":3,"sources":["style.scss"],"names":[],"mappings":"AAEA,KACE,mBACA,YACE,iBALS,KASb,GACE","file":"../style.css","sourcesContent":["$main-color: #fb4;\r\n\r\nbody {\r\n  background: #f7f7f7;\r\n  header {\r\n    background-color: $main-color;\r\n  }\r\n}\r\n\r\nli {\r\n  color: #eee;\r\n}"]}

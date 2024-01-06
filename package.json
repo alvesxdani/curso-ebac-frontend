@@ -1,20 +1,16 @@
 {
   "name": "exercicios-ebac-frontend",
   "version": "1.0.0",
-  "description": "A project with gulp",
+  "description": "",
   "main": "index.html",
   "scripts": {
-    "gulp": "gulp",
+    "less": "less-watch-compiler ./src/styles/ ./build/styles/",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "gulp": "^4.0.2",
-    "gulp-imagemin": "^7.1.0",
-    "gulp-sass": "^5.1.0",
-    "gulp-sourcemaps": "^3.0.0",
-    "gulp-uglify": "^3.0.2",
-    "sass": "^1.69.6"
+    "less": "^4.2.0",
+    "less-watch-compiler": "^1.16.3"
   }
 }

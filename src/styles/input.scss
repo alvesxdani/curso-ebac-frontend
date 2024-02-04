@@ -1,0 +1,72 @@
+//Reset
+* {
+  margin: 0;
+  padding: 0;
+}
+
+// Cores
+$cor-primaria: #333;
+$cor-secundaria: #fff;
+$cor-fundo: #e9e9e9;
+
+// Fontes
+$fonte-titulo: 'Arial', sans-serif;
+$fonte-corpo: 'Helvetica', sans-serif;
+
+// Tamanho da fonte
+$tamanho-titulo: 2rem;
+$tamanho-texto: 1rem;
+
+// Espaçamento
+$espacamento: 1.5rem;
+
+// Estilos globais
+body {
+  font-family: $fonte-corpo;
+  background-color: $cor-fundo;
+  color: $cor-primaria;
+  height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.header {
+  background-color: $cor-primaria;
+  color: $cor-secundaria;
+  padding: $espacamento;
+  text-align: center;
+  height: 10rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  &__title {
+    font-family: $fonte-titulo;
+    font-size: $tamanho-titulo;
+    margin: 0;
+  }
+
+  &__countdown {
+    margin-top: 1rem;
+  }
+}
+
+.content {
+  padding: $espacamento;
+
+  &__text {
+    font-size: $tamanho-texto;
+  }
+}
+
+.footer {
+  background-color: $cor-secundaria;
+  padding: $espacamento;
+  text-align: center;
+
+  &__copyright {
+    font-size: 0.8rem;
+    margin: 0;
+  }
+}

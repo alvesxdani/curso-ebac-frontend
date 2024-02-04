@@ -580,7 +580,7 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 
 },{}],"dJSBl":[function(require,module,exports) {
 // Data do Dia dos Finados (2 de novembro do mesmo ano)
-const targetDate = new Date(new Date().getFullYear(), 10, 2) // Mês 10 representa novembro (janeiro é 0-based)
+const targetDate = new Date(new Date().getFullYear(), 10, 2) //
 ;
 function updateCountdown() {
     const currentDate = new Date();

@@ -2,6 +2,7 @@
   "name": "exercicios-ebac-frontend",
   "version": "1.0.0",
   "description": "",
+  "source": "index.html",
   "scripts": {
     "start": "sass ./src/styles/input.scss ./src/styles/output.css --watch",
     "parcel": "parcel ./index.html",

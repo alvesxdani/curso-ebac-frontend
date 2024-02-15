@@ -10,6 +10,7 @@ xhr.onload = () => {
     console.log(user)
     document.querySelector('.profile-name').innerHTML = user.name
     document.querySelector('.profile-avatar').src = user.avatar_url
+    document.querySelector('.profile-link').href = user.html_url
     document.querySelector('.profile-username').innerHTML = `@${user.login}`
     document.querySelector('.profile-followers > span').innerHTML = user.followers
     document.querySelector('.profile-following > span').innerHTML = user.following

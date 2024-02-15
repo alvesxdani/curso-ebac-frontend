@@ -1,47 +1,21 @@
-# Projeto HTML com Requisição AJAX à API do GitHub
+# Exemplo de código orientado a objetos em JavaScript
 
-Este é um projeto simples de uma página HTML que utiliza AJAX para fazer requisições à API do GitHub e exibir informações sobre um usuário.
+Este é um exemplo simples de código JavaScript que demonstra a utilização de conceitos de programação orientada a objetos (POO). O código inclui a definição de uma classe abstrata, classes que herdam dessa classe abstrata e a criação de instâncias dessas classes.
 
-## Funcionalidades
+## Estrutura do código
 
-- **Requisição AJAX:** Utiliza JavaScript para fazer requisições assíncronas à API do GitHub.
-- **Exibição de Informações:** Exibe informações básicas sobre um usuário do GitHub, como nome, foto de perfil e número de repositórios públicos.
+O código é dividido em três partes principais:
 
-## Como usar
+1. **Definição da classe abstrata `Veiculo`:**
+   - Esta classe contém propriedades e métodos comuns a todos os veículos, como `marca`, `modelo`, `acelerar` e `frear`. Esta classe é utilizada como base para as classes que herdam dela.
 
-1. Clone o repositório para o seu computador:
+2. **Definição das classes `Carro` e `Moto`, que herdam de `Veiculo`:**
+   - `Carro`: Esta classe herda de `Veiculo` e adiciona uma propriedade `numPortas` e um método `abrirPortas`.
+   - `Moto`: Esta classe também herda de `Veiculo` e adiciona uma propriedade `cilindrada` e um método `ligar`.
 
-```bash
-git clone https://github.com/alvesxdani/exercicios-ebac-frontend.git
-```
+3. **Criação de instâncias de objetos:**
+   - São criadas três instâncias de objetos, duas do tipo `Carro` e uma do tipo `Moto`. Cada uma delas é inicializada com valores específicos para as propriedades `marca`, `modelo` e as propriedades adicionais de suas respectivas classes.
 
-2. Abra o arquivo `index.html` em qualquer navegador web.
+## Como executar
 
-3. As informações do usuário serão exibidas.
-
-## Pré-requisitos
-
-- Navegador web moderno que suporte AJAX.
-
-## Estrutura do Projeto
-
-```
-exercicios-ebac-frontend/
-│   index.html
-│   style.css
-│   script.js
-```
-
-- **index.html:** Contém a estrutura HTML da página.
-- **style.css:** Arquivo CSS para estilizar a página.
-- **scripts.js:** Arquivo JavaScript com o código para realizar a requisição AJAX e manipular os dados recebidos.
-
-## Tecnologias Utilizadas
-
-- HTML5
-- CSS3
-- JavaScript (AJAX)
-
-## Licença
-
-Este projeto está licenciado sob a [Licença MIT](https://opensource.org/licenses/MIT).
+Para executar o código, basta copiar o código JavaScript em um arquivo `.js` e executá-lo em um ambiente que suporte JavaScript, como um navegador ou Node.js.

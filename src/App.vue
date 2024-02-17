@@ -11,46 +11,50 @@ export default {
     const states = reactive({
       number1: 0,
       number2: 0,
-      operacao: 'somar',
-      resultado: null,
+      resultado: '',
     })
 
-    const selectedOption = 'somar' // Defina selectedOption fora do objeto states
+    const selectedOption = reactive({ value: null });
 
     const handleNumber1 = (event) => {
       states.number1 = Number(event.target.value)
+      console.log('input 1: ' + states.number1)
     }
 
     const handleNumber2 = (event) => {
       states.number2 = Number(event.target.value)
+      console.log('input 2: ' + states.number2)
     }
 
-    const retornaOpcao = () => {
-      states.operacao = selectedOption // Acesse selectedOption diretamente
+    const handleOperacao = ({ target }) => {
+      console.log(target.value, selectedOption.value)
+      selectedOption.value = target.value
     }
 
     const calcular = () => {
       let result = 0
-      if (states.operacao === 'somar') {
+      if (selectedOption.value === 'somar') {
         result = states.number1 + states.number2
-      } else if (states.operacao === 'subtrair') {
+      } else if (selectedOption.value === 'subtrair') {
         result = states.number1 - states.number2
-      } else if (states.operacao === 'multiplicar') {
+      } else if (selectedOption.value === 'multiplicar') {
         result = states.number1 * states.number2
-      } else if (states.operacao === 'dividir') {
+      } else if (selectedOption.value === 'dividir') {
         result = states.number1 / states.number2
       } else {
         throw new Error('Operação inválida')
       }
+      states.number1 = 0
+      states.number2 = 0
       states.resultado = `O resultado é ${result}`
     }
 
     return {
       states,
-      selectedOption, // Retorne selectedOption no objeto de retorno
+      selectedOption,
       handleNumber1,
       handleNumber2,
-      retornaOpcao,
+      handleOperacao,
       calcular,
     }
   },
@@ -68,7 +72,7 @@ export default {
               type="number"
               name="number1"
               class="form-control"
-              @keyup="handleNumber1"
+              @change="handleNumber1"
               :value="states.number1"
             />
           </div>
@@ -86,10 +90,10 @@ export default {
             <label for="calculo" class="form-label">Operação:</label>
             <select
               class="form-select"
-              v-model="selectedOption"
-              @change="retornaOpcao()"
+              v-model="selectedOption.value"
+              @change="handleOperacao"
             >
-              <option value="somar" selected="selected">Somar</option>
+              <option value="somar">Somar</option>
               <option value="subtrair">Subtrair</option>
               <option value="multiplicar">Multiplicar</option>
               <option value="dividir">Dividir</option>
@@ -98,7 +102,7 @@ export default {
         </div>
         <div class="row">
           <div class="bg-light p-2 rounded-2 mb-4" v-if="states.resultado">
-            {{ states.resultado ? states.resultado : '' }}
+            {{ states.resultado }}
           </div>
         </div>
         <Button @click="calcular">Resultado</Button>

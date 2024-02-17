@@ -1,5 +1,5 @@
 <script>
-import { reactive } from 'vue'
+import { reactive, watch } from 'vue'
 import Button from './components/Button.vue'
 
 export default {
@@ -14,7 +14,7 @@ export default {
       resultado: '',
     })
 
-    const selectedOption = reactive({ value: null });
+    const selectedOption = reactive({ value: 'somar' })
 
     const handleNumber1 = (event) => {
       states.number1 = Number(event.target.value)
@@ -32,22 +32,27 @@ export default {
     }
 
     const calcular = () => {
-      let result = 0
-      if (selectedOption.value === 'somar') {
-        result = states.number1 + states.number2
-      } else if (selectedOption.value === 'subtrair') {
-        result = states.number1 - states.number2
-      } else if (selectedOption.value === 'multiplicar') {
-        result = states.number1 * states.number2
-      } else if (selectedOption.value === 'dividir') {
-        result = states.number1 / states.number2
-      } else {
-        throw new Error('Operação inválida')
+      let result = null
+      if (selectedOption.value) {
+        if (selectedOption.value === 'somar') {
+          result = states.number1 + states.number2
+        } else if (selectedOption.value === 'subtrair') {
+          result = states.number1 - states.number2
+        } else if (selectedOption.value === 'multiplicar') {
+          result = states.number1 * states.number2
+        } else if (selectedOption.value === 'dividir') {
+          result = states.number1 / states.number2
+        } else {
+          throw new Error('Operação inválida')
+        }
       }
-      states.number1 = 0
-      states.number2 = 0
+      console.log(result)
       states.resultado = `O resultado é ${result}`
     }
+
+    watch([() => states.number1, () => states.number2], () => {
+      calcular()
+    })
 
     return {
       states,
@@ -72,7 +77,7 @@ export default {
               type="number"
               name="number1"
               class="form-control"
-              @change="handleNumber1"
+              @input="handleNumber1"
               :value="states.number1"
             />
           </div>
@@ -82,7 +87,7 @@ export default {
               type="number"
               name="number2"
               class="form-control"
-              @keyup="handleNumber2"
+              @input="handleNumber2"
               :value="states.number2"
             />
           </div>
@@ -105,7 +110,6 @@ export default {
             {{ states.resultado }}
           </div>
         </div>
-        <Button @click="calcular">Resultado</Button>
       </div>
     </div>
   </div>

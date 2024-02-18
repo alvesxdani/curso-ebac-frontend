@@ -26,10 +26,13 @@ function App() {
   const [erro, setErro] = useState<string | null>(null)
 
   function handleChangePeso({ target }: ChangeEvent<HTMLInputElement>) {
-    setPeso(target.valueAsNumber)  }
+    setPeso(target.valueAsNumber)
+    if (isNaN(target.valueAsNumber)) setPeso(0)
+    }
 
   function handleChangeAltura({ target }: ChangeEvent<HTMLInputElement>) {
     setAltura(target.valueAsNumber)
+    if(isNaN(target.valueAsNumber)) setAltura(0)
   }
 
   function calculaIMC() {
